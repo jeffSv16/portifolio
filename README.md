@@ -1,30 +1,42 @@
 # Portfólio — Jeferson Vasselai
 
-Landing page pessoal com informações profissionais, stacks tecnológicas e formas de contato.
+Landing page pessoal em **React + Vite + Framer Motion** com design preto e branco, stacks interativas e animações.
+
+## Stack do projeto
+
+- React 19
+- Vite 6
+- Framer Motion
+- Lucide React + React Icons
 
 ## Seções
 
-- **Hero** — Apresentação e links sociais
-- **Sobre mim** — Resumo profissional
-- **Stacks** — Tecnologias com ícones interativos
-- **Experiência** — Histórico profissional
-- **Formação** — Educação e certificados
-- **Contato** — E-mail, telefone, LinkedIn e GitHub
+- Hero com efeito typewriter
+- Sobre mim (ícones SVG, sem emojis)
+- Stacks com filtros por categoria e preview interativo
+- Experiência com accordion animado
+- Formação acadêmica
+- Contato com copiar e-mail/telefone
 
-## Como visualizar
-
-Abra o arquivo `index.html` no navegador ou use um servidor local:
+## Desenvolvimento local
 
 ```bash
-npx serve .
+npm install
+npm run dev
+```
+
+## Build
+
+```bash
+npm run build
+npm run preview
 ```
 
 ## Deploy (GitHub Pages)
 
-1. Vá em **Settings → Pages**
-2. Source: **Deploy from a branch**
-3. Branch: **main** / pasta **/ (root)**
-4. Salve — o site ficará em `https://jeffsv16.github.io/portifolio/`
+O workflow `.github/workflows/deploy.yml` publica automaticamente na branch `main`.
+
+Site: [jeffsv16.github.io/portifolio](https://jeffsv16.github.io/portifolio/)
 
 ## Contato
 
