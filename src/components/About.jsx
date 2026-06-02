@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { aboutParagraphs, infoCards } from '../data/portfolio'
+import LanguageLevels from './LanguageLevels'
 
 const container = {
   hidden: {},
@@ -53,6 +54,7 @@ export default function About() {
                 </div>
               </motion.div>
             ))}
+            <LanguageLevels />
           </motion.div>
         </div>
       </div>

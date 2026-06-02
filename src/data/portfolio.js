@@ -28,7 +28,7 @@ import {
 import { FaJava } from 'react-icons/fa6'
 import { DiMsqlServer } from 'react-icons/di'
 import { TbApi, TbDatabase, TbLayoutGrid, TbBrandAzure } from 'react-icons/tb'
-import { MapPin, GraduationCap, Languages, Briefcase } from 'lucide-react'
+import { MapPin, GraduationCap, Briefcase } from 'lucide-react'
 
 export const profile = {
   name: 'Jeferson Vasselai',
@@ -59,8 +59,13 @@ export const aboutParagraphs = [
 export const infoCards = [
   { icon: MapPin, title: 'Localização', text: 'Brusque, Santa Catarina — Brasil' },
   { icon: GraduationCap, title: 'Formação', text: 'Sistemas de Informação — Unifebe' },
-  { icon: Languages, title: 'Idiomas', text: 'Português · Espanhol · Inglês' },
   { icon: Briefcase, title: 'Área de atuação', text: 'Sistemas financeiros & ERP' },
+]
+
+export const languages = [
+  { name: 'Português', level: 'Nativo', progress: 100 },
+  { name: 'Espanhol', level: 'Intermediário', progress: 65 },
+  { name: 'Inglês', level: 'Básico', progress: 35 },
 ]
 
 export const stackCategories = [
