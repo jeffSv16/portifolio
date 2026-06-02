@@ -19,7 +19,13 @@ import {
   SiConfluence,
   SiOpenai,
   SiDevexpress,
+  SiVuedotjs,
+  SiNextdotjs,
+  SiThreedotjs,
+  SiPython,
+  SiSupabase,
 } from 'react-icons/si'
+import { FaJava } from 'react-icons/fa6'
 import { DiMsqlServer } from 'react-icons/di'
 import { TbApi, TbDatabase, TbLayoutGrid, TbBrandAzure } from 'react-icons/tb'
 import { MapPin, GraduationCap, Languages, Briefcase } from 'lucide-react'
@@ -64,11 +70,14 @@ export const stackCategories = [
     items: [
       { name: 'Angular', Icon: SiAngular },
       { name: 'React', Icon: SiReact },
+      { name: 'Vue', Icon: SiVuedotjs },
+      { name: 'Next.js', Icon: SiNextdotjs },
+      { name: 'Three.js', Icon: SiThreedotjs },
       { name: 'Ionic', Icon: SiIonic },
       { name: 'TypeScript', Icon: SiTypescript },
-      { name: 'JavaScript', Icon: SiJavascript },
-      { name: 'HTML5', Icon: SiHtml5 },
-      { name: 'CSS3', Icon: SiCss },
+      { name: 'JS', Icon: SiJavascript },
+      { name: 'HTML', Icon: SiHtml5 },
+      { name: 'CSS', Icon: SiCss },
       { name: 'PWA', Icon: SiPwa },
     ],
   },
@@ -78,6 +87,8 @@ export const stackCategories = [
     items: [
       { name: '.NET', Icon: SiDotnet },
       { name: 'C#', Icon: SiSharp },
+      { name: 'Java', Icon: FaJava },
+      { name: 'Python', Icon: SiPython },
       { name: 'APIs REST', Icon: SiFastapi },
       { name: 'Dapper', Icon: TbDatabase },
     ],
@@ -88,6 +99,7 @@ export const stackCategories = [
     items: [
       { name: 'PostgreSQL', Icon: SiPostgresql },
       { name: 'SQL Server', Icon: DiMsqlServer },
+      { name: 'Supabase', Icon: SiSupabase },
     ],
   },
   {
@@ -129,7 +141,7 @@ export const experiences = [
   {
     id: 'turris',
     date: 'Dez 2021 — Dez 2025',
-    role: 'Desenvolvedor',
+    role: 'Desenvolvedor Full Stack',
     company: 'Turris · Itajaí, SC',
     highlights: [
       'Sistemas internos para fundo de investimento — gestão financeira e operacional',
