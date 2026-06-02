@@ -27,7 +27,7 @@ import {
 } from 'react-icons/si'
 import { FaJava } from 'react-icons/fa6'
 import { DiMsqlServer } from 'react-icons/di'
-import { TbApi, TbDatabase, TbLayoutGrid, TbBrandAzure } from 'react-icons/tb'
+import { TbApi, TbDatabase, TbLayoutGrid, TbBrandAzure, TbBrandReactNative } from 'react-icons/tb'
 import { MapPin, GraduationCap, Briefcase } from 'lucide-react'
 
 export const profile = {
@@ -75,6 +75,7 @@ export const stackCategories = [
     items: [
       { name: 'Angular', Icon: SiAngular },
       { name: 'React', Icon: SiReact },
+      { name: 'React Native', Icon: TbBrandReactNative },
       { name: 'Vue', Icon: SiVuedotjs },
       { name: 'Next.js', Icon: SiNextdotjs },
       { name: 'Three.js', Icon: SiThreedotjs },
