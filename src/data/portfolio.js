@@ -40,7 +40,7 @@ export const profile = {
     'APIs REST & Dapper',
   ],
   summary:
-    '5 anos desenvolvendo sistemas corporativos e ERP — com experiência em soluções financeiras e fundo de investimento. Front-end com Angular, React e Ionic; backend com .NET, APIs REST e Dapper.',
+    '5 anos desenvolvendo sistemas ERP — com experiência em soluções financeiras e fundo de investimento. Front-end com Angular, React e Ionic; backend com .NET, APIs REST e Dapper.',
   photo: `${import.meta.env.BASE_URL}assets/profile.png`,
   email: 'jefersonvasselai156@gmail.com',
   phone: '(47) 98802-8942',
