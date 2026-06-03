@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Languages } from 'lucide-react'
 import { languages } from '../data/portfolio'
+import { useCanHover } from '../hooks/useCanHover'
 
 function LanguageDonut({ progress, delay = 0 }) {
   const size = 46
@@ -42,6 +43,8 @@ function LanguageDonut({ progress, delay = 0 }) {
 }
 
 export default function LanguageLevels() {
+  const canHover = useCanHover()
+
   return (
     <motion.div
       className="info-card info-card--languages"
@@ -49,7 +52,7 @@ export default function LanguageLevels() {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-60px' }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ x: 6, borderColor: 'var(--white)' }}
+      whileHover={canHover ? { x: 6 } : undefined}
     >
       <div className="info-card__icon">
         <Languages size={20} strokeWidth={1.5} />

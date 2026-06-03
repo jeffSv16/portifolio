@@ -2,12 +2,15 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { stackCategories } from '../data/portfolio'
 import { SectionHeader } from './About'
+import { useCanHover } from '../hooks/useCanHover'
+import { hoverLift, tapFeedback } from '../utils/motion'
 
 const allCategory = { id: 'all', label: 'Todas' }
 
 export default function Stacks() {
   const [activeCategory, setActiveCategory] = useState('all')
   const [hoveredStack, setHoveredStack] = useState(null)
+  const canHover = useCanHover()
 
   const filtered =
     activeCategory === 'all'
@@ -25,17 +28,15 @@ export default function Stacks() {
         <SectionHeader
           tag="Tecnologias"
           title="O que eu programo"
-          subtitle="Filtre por categoria e passe o mouse nos ícones"
+          subtitle={canHover ? 'Filtre por categoria e passe o mouse nos ícones' : 'Toque nos filtros para ver por categoria'}
         />
 
         <div className="stacks__filters">
           {[allCategory, ...stackCategories].map((cat) => (
-            <motion.button
+            <button
               key={cat.id}
               className={`stacks__filter ${activeCategory === cat.id ? 'stacks__filter--active' : ''}`}
               onClick={() => setActiveCategory(cat.id)}
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
             >
               {cat.label}
               {activeCategory === cat.id && (
@@ -45,41 +46,34 @@ export default function Stacks() {
                   transition={{ type: 'spring', stiffness: 400, damping: 30 }}
                 />
               )}
-            </motion.button>
+            </button>
           ))}
         </div>
 
-        <motion.p
-          key={hoveredStack ?? 'default'}
-          className="stacks__preview"
-          initial={{ opacity: 0, y: 6 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.2 }}
-        >
-          {hoveredStack ?? `${filtered.length} tecnologias`}
-        </motion.p>
+        <p className="stacks__preview">{hoveredStack ?? `${filtered.length} tecnologias`}</p>
 
-        <motion.div className="stacks__grid" layout>
-          <AnimatePresence mode="popLayout">
+        <div className="stacks__grid">
+          <AnimatePresence mode={canHover ? 'popLayout' : 'sync'}>
             {filtered.map(({ name, Icon }, i) => (
               <motion.div
                 key={name}
                 className="stack-icon"
-                layout
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.8 }}
-                transition={{ duration: 0.3, delay: i * 0.02 }}
-                onMouseEnter={() => setHoveredStack(name)}
-                onMouseLeave={() => setHoveredStack(null)}
-                whileHover={{ y: -8, borderColor: 'var(--white)' }}
-                whileTap={{ scale: 0.95 }}
+                layout={canHover}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.2, delay: canHover ? i * 0.02 : 0 }}
+                onMouseEnter={canHover ? () => setHoveredStack(name) : undefined}
+                onMouseLeave={canHover ? () => setHoveredStack(null) : undefined}
+                onTouchStart={() => setHoveredStack(name)}
+                whileHover={hoverLift(canHover, -6) ? { y: -6 } : undefined}
+                whileTap={tapFeedback(canHover)}
               >
                 <Icon size={32} aria-label={name} />
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </div>
     </section>
   )

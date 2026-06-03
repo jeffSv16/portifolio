@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion'
 import { education } from '../data/portfolio'
 import { SectionHeader } from './About'
+import { useCanHover } from '../hooks/useCanHover'
+import { hoverLift } from '../utils/motion'
 
 export default function Education() {
+  const canHover = useCanHover()
+
   return (
     <section className="section education" id="education">
       <div className="container">
@@ -17,7 +21,7 @@ export default function Education() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -6, borderColor: 'var(--white)' }}
+              whileHover={hoverLift(canHover, -6) ? { y: -6 } : undefined}
             >
               <span className={`edu-card__badge edu-card__badge--${item.status}`}>{item.badge}</span>
               <h3>{item.title}</h3>

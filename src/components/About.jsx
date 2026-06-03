@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { aboutParagraphs, infoCards } from '../data/portfolio'
 import LanguageLevels from './LanguageLevels'
+import { useCanHover } from '../hooks/useCanHover'
 
 const container = {
   hidden: {},
@@ -13,6 +14,8 @@ const item = {
 }
 
 export default function About() {
+  const canHover = useCanHover()
+
   return (
     <section className="section about" id="about">
       <div className="container">
@@ -43,7 +46,7 @@ export default function About() {
                 key={title}
                 className="info-card"
                 variants={item}
-                whileHover={{ x: 6, borderColor: 'var(--white)' }}
+                whileHover={canHover ? { x: 6 } : undefined}
               >
                 <div className="info-card__icon">
                   <Icon size={20} strokeWidth={1.5} />

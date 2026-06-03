@@ -3,6 +3,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Copy, Check, Mail, Phone, Github, Linkedin } from 'lucide-react'
 import { profile } from '../data/portfolio'
 import { SectionHeader } from './About'
+import { useCanHover } from '../hooks/useCanHover'
+import { hoverLift, tapFeedback } from '../utils/motion'
 
 const contacts = [
   {
@@ -41,6 +43,7 @@ const contacts = [
 
 export default function Contact() {
   const [copied, setCopied] = useState(null)
+  const canHover = useCanHover()
 
   const handleCopy = async (id, text) => {
     await navigator.clipboard.writeText(text)
@@ -70,7 +73,7 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08, duration: 0.45 }}
-                whileHover={{ y: -4, borderColor: 'var(--white)' }}
+                whileHover={hoverLift(canHover, -4) ? { y: -4 } : undefined}
               >
                 <div className="contact__icon">
                   <Icon size={22} strokeWidth={1.5} />
@@ -97,16 +100,16 @@ export default function Contact() {
                     <motion.button
                       className="contact__copy"
                       onClick={() => handleCopy(item.id, item.value)}
-                      whileTap={{ scale: 0.9 }}
+                      whileTap={tapFeedback(canHover)}
                       aria-label={`Copiar ${item.label}`}
                     >
                       <AnimatePresence mode="wait">
                         {isCopied ? (
-                          <motion.span key="check" initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
+                          <motion.span key="check" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                             <Check size={16} />
                           </motion.span>
                         ) : (
-                          <motion.span key="copy" initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }}>
+                          <motion.span key="copy" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
                             <Copy size={16} />
                           </motion.span>
                         )}
