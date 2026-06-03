@@ -34,13 +34,13 @@ export const profile = {
   name: 'Jeferson Vasselai',
   role: 'Desenvolvedor de Software',
   roles: [
-    'Desenvolvedor Full Stack',
-    'Sistemas corporativos & ERP',
-    'Front-end com React e Angular',
-    'Back-end com .NET e APIs REST',
+    'Desenvolvedor de Software',
+    'Front-end com React',
+    'Back-end com .NET',
+    'APIs REST & Dapper',
   ],
   summary:
-    '5 anos desenvolvendo sistemas corporativos e ERP — com 4 anos de experiência em fundo de investimento na Turris. Front-end com Angular, React e Ionic; backend com .NET, APIs REST e Dapper.',
+    '5 anos desenvolvendo sistemas corporativos e ERP — com experiência em soluções financeiras e fundo de investimento. Front-end com Angular, React e Ionic; backend com .NET, APIs REST e Dapper.',
   photo: `${import.meta.env.BASE_URL}assets/profile.png`,
   email: 'jefersonvasselai156@gmail.com',
   phone: '(47) 98802-8942',
@@ -50,7 +50,7 @@ export const profile = {
 }
 
 export const aboutParagraphs = [
-  'Desenvolvedor de software com 5 anos de experiência na construção de sistemas corporativos. Na Turris, atuei por 4 anos em soluções para fundo de investimento — gestão financeira, operacional e ERP.',
+  'Desenvolvedor de software com 5 anos de experiência no desenvolvimento de sistemas corporativos, atuando principalmente em soluções voltadas à área financeira em fundo de investimento.',
   'Experiência no desenvolvimento front-end com Angular, React e Ionic, além de atuação no backend com .NET (C#), construção e integração de APIs REST e acesso a dados com Dapper.',
   'Possuo conhecimento em bancos de dados PostgreSQL e SQL Server, além de experiência com Docker, Azure e monitoramento de aplicações com Seq. Participei da migração de Angular para React e da integração de soluções com Inteligência Artificial.',
   'Atuo com foco em performance, organização de código, arquitetura e melhoria contínua da experiência do usuário.',
@@ -59,7 +59,7 @@ export const aboutParagraphs = [
 export const infoCards = [
   { icon: MapPin, title: 'Localização', text: 'Brusque, Santa Catarina — Brasil' },
   { icon: GraduationCap, title: 'Formação', text: 'Sistemas de Informação — Unifebe' },
-  { icon: Briefcase, title: 'Área de atuação', text: 'Sistemas corporativos · ERP · Financeiro' },
+  { icon: Briefcase, title: 'Área de atuação', text: 'Sistemas financeiros & ERP' },
 ]
 
 export const languages = [
